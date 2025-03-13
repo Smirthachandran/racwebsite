@@ -1,0 +1,155 @@
+/* Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    background: #011223; /* Dark Navy Blue */
+    color: rgba(255, 255, 255, 0.875);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-size: 1.7rem; /* Slightly bigger */
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-link {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1.3rem; /* Increased font size */
+    padding: 8px 15px;
+    transition: color 0.5s ease; /* Smooth color change */
+}
+
+.nav-link:hover {
+    color: #8fdef4; /* Bright Light Blue */
+}
+
+/* Home Section with Full-Height Background */
+#home {
+    flex: 1;
+    width: 100%;
+    min-height: 100vh; /* Ensures full screen height */
+    background: url('images/hands.png') center/cover no-repeat fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* Footer Styles */
+footer {
+    background: #253544; /* Dark Navy Blue */
+    color: rgba(228, 237, 242, 0.888);
+    text-align: center;
+    padding: 100px 0; /* Increased height */
+    margin-top: auto;
+}
+
+footer h2 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icon img {
+    width: 45px; /* Increased size */
+    height: 45px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2); /* Zoom effect on hover */
+}
+/* Club Title Animation */
+.club-title {
+    display: flex;
+    flex-direction: column; /* Stacks words vertically */
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    left: 20px; /* Starts from the left corner */
+    top: 30%; /* Adjust based on your layout */
+}
+
+/* Word Animation */
+.word {
+    opacity: 0;
+    position: relative;
+    animation: slideIn 0.8s ease-in-out forwards;
+}
+
+/* Staggered delay with indentation */
+.word:nth-child(1) { animation-delay: 0.5s; left: 30px; }     /* ROTARACT */
+.word:nth-child(2) { animation-delay: 1s; left: 50px; }      /* CLUB */
+.word:nth-child(3) { animation-delay: 1.5s; left: 90px; }    /* OF */
+.word:nth-child(4) { animation-delay: 2s; left: 170px; }     /* SVCE */
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-200px); /* Moves from far left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* Description Section */
+#description {
+    background: white; /* Or any contrasting background */
+    text-align: center;
+    padding: 50px 20px;
+    color: #011223; /* Dark Navy Blue */
+}
+
+.description-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.description-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.description-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+

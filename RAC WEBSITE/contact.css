@@ -1,0 +1,84 @@
+/* Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    background: #011223; /* Dark Navy Blue */
+    color: rgba(255, 255, 255, 0.875);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-link {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 8px 15px;
+    transition: color 0.5s ease; /* Only color change */
+}
+
+.nav-link:hover {
+    color: #8fdef4; /* Light Blue */
+}
+/* Footer Styles */
+footer {
+    background: #253544; /* Dark Navy Blue */
+    color: rgba(228, 237, 242, 0.888);
+    text-align: center;
+    padding: 80px 0;
+    margin-top: auto;
+}
+
+footer h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon img {
+    width: 40px; /* Adjust size as needed */
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+/* Main content grows to push footer down */
+section {
+    flex: 1;
+}
+
+.social-icon img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
