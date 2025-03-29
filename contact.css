@@ -1,0 +1,150 @@
+/* Reset & Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+    background: linear-gradient(135deg, #FF9A8B, #FAD0C4); 
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-logo {
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 8px 15px;
+    transition: color 0.5s ease;
+}
+
+.nav-link:hover {
+    color: #FFDEE9; 
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(135deg, #FF9A8B, #FAD0C4); 
+    color: white;
+    text-align: center;
+    padding: 100px 0; 
+    margin-top: auto;
+}
+
+footer h2 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-icon img {
+    width: 45px; 
+    height: 45px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.2);
+}
+
+
+/* Contact Section */
+.contact-section {
+    padding: 150px 20px 80px;
+    text-align: center;
+    color: #333;
+}
+
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    color: #E75480; /* Soft pink title */
+}
+
+/* Contact Container */
+.contact-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Contact Cards */
+.contact-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.contact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    background: #FFD1DC; /* Soft pink hover effect */
+}
+
+.contact-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+    transform: scale(1.2);
+}
+
+.contact-card h2 {
+    font-size: 1.8rem;
+    color: #FF69B4; /* Hot Pink */
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+
