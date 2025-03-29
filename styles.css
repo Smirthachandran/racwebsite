@@ -1,4 +1,6 @@
-/* Reset & Global Styles */
+/* ============================= */
+/* 🌸 Global Styles */
+/* ============================= */
 * {
     margin: 0;
     padding: 0;
@@ -10,48 +12,133 @@ html, body {
     height: 100%;
     display: flex;
     flex-direction: column;
+    scroll-behavior: smooth;
+    background: #FFE3E3;  /* Softer Pink Background */
+    color: #333;          /* Darker text for readability */
 }
 
-/* Navbar */
+/* ============================= */
+/* 🌸 Navbar */
+/* ============================= */
 .navbar {
     background: linear-gradient(135deg, #FF9A8B, #FAD0C4); /* Pink Gradient */
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 40px;
+    padding: 20px 60px;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
 }
 
 .nav-logo {
-    font-size: 1.7rem;
+    font-size: 2rem;    /* Bigger logo text */
     font-weight: bold;
     text-transform: uppercase;
     color: white;
+    text-decoration: none;
 }
 
+/* Navbar Menu */
 .nav-menu {
     display: flex;
-    gap: 20px;
+    gap: 40px;
     list-style: none;
+    transition: 0.5s ease;
+}
+
+.nav-item {
+    transition: 0.3s;
 }
 
 .nav-link {
     color: white;
     text-decoration: none;
-    font-size: 1.3rem;
-    padding: 8px 15px;
-    transition: color 0.5s ease;
+    font-size: 1.4rem;    /* Larger menu links */
+    padding: 10px 20px;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .nav-link:hover {
-    color: #FFDEE9; /* Light Pink on Hover */
+    color: #FFD1DC;  /* Light pastel pink on hover */
+    transform: translateY(-5px);
 }
 
-/* Home Section with Pink Gradient Background */
+/* ============================= */
+/* 🌸 Hamburger Menu */
+/* ============================= */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    z-index: 1100;
+}
+
+.hamburger span {
+    background: white;
+    width: 35px;
+    height: 4px;
+    transition: 0.3s;
+}
+
+/* Hamburger Icon Animation */
+.hamburger.open span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* ============================= */
+/* 🌸 Mobile Menu */
+/* ============================= */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: #FF9A8B;  /* Softer pink on mobile */
+        z-index: 999;
+        padding: 30px 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-item {
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nav-link {
+        font-size: 22px;    /* Larger text on mobile */
+    }
+}
+
+/* ============================= */
+/* 🌸 Home Section */
+/* ============================= */
 #home {
     flex: 1;
     width: 100%;
@@ -63,49 +150,17 @@ html, body {
     justify-content: center;
     text-align: center;
     color: white;
-    position: relative;
-}
-
-/* Footer Styles */
-footer {
-    background: linear-gradient(135deg, #FF9A8B, #FAD0C4); /* Pink Gradient */
-    color: white;
-    text-align: center;
-    padding: 100px 0; 
-    margin-top: auto;
-}
-
-footer h2 {
-    font-size: 1.7rem;
-    margin-bottom: 10px;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
-
-.social-icon img {
-    width: 45px; 
-    height: 45px;
-    transition: transform 0.3s ease;
-}
-
-.social-icon img:hover {
-    transform: scale(1.2);
+    padding-top: 100px;
 }
 
 /* Club Title Animation */
 .club-title {
     display: flex;
     flex-direction: column;
-    font-size: 3rem;
+    font-size: 4rem;      /* Larger title text */
     font-weight: bold;
     color: white;
-    position: absolute;
-    left: 20px;
-    top: 30%;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Word Animation */
@@ -115,11 +170,11 @@ footer h2 {
     animation: slideIn 0.8s ease-in-out forwards;
 }
 
-/* Staggered delay with indentation */
-.word:nth-child(1) { animation-delay: 0.5s; left: 30px; }     /* ROTARACT */
-.word:nth-child(2) { animation-delay: 1s; left: 50px; }      /* CLUB */
-.word:nth-child(3) { animation-delay: 1.5s; left: 90px; }    /* OF */
-.word:nth-child(4) { animation-delay: 2s; left: 170px; }     /* SVCE */
+/* Staggered delay */
+.word:nth-child(1) { animation-delay: 0.5s; left: 40px; }     
+.word:nth-child(2) { animation-delay: 1s; left: 48px; }      
+.word:nth-child(3) { animation-delay: 1.5s; left: 60px; }    
+.word:nth-child(4) { animation-delay: 2s; left: 48px; }     
 
 @keyframes slideIn {
     from {
@@ -132,27 +187,86 @@ footer h2 {
     }
 }
 
-/* Description Section */
+/* ============================= */
+/* 🌸 Description Section */
+/* ============================= */
 #description {
-    background: #FFDEE9; /* Light Pink */
+    background: #FFDEE9;    /* Light Pink */
     text-align: center;
-    padding: 50px 20px;
-    color: #011223; 
+    padding: 80px 20px;
+    color: #333; 
 }
 
 .description-content {
-    max-width: 800px;
+    max-width: 1000px;
     margin: auto;
 }
 
 .description-content h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #FF9A8B; /* Blush Pink Title */
+    font-size: 3rem;      /* Larger heading */
+    margin-bottom: 30px;
+    color: #FF758C;        /* Soft pink */
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .description-content p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #253544;
+    font-size: 1.6rem;     /* Larger paragraph text */
+    line-height: 2;
+    color: #555;           /* Darker shade for readability */
+}
+
+
+/* 🌸 Footer Section */
+
+footer {
+    background: linear-gradient(135deg, #FF9A8B, #FAD0C4); 
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+}
+
+footer h2 {
+    font-size: 2rem;      /* Larger footer heading */
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-icon img {
+    width: 50px; 
+    height: 50px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.3);
+}
+
+
+/* 🌸 Animations & Effects */
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar hover */
+.nav-item:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+/* Card hover effect */
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }

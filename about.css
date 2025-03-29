@@ -112,4 +112,93 @@ footer h2 {
     color: #333;
     line-height: 1.6;
 }
+/*  Hamburger Menu */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    z-index: 1100;
+}
+
+.hamburger span {
+    background: white;
+    width: 35px;
+    height: 4px;
+    transition: 0.3s;
+}
+
+/* Hamburger Icon Animation */
+.hamburger.open span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+
+/*  Mobile Menu */
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: #FF9A8B;  /* Softer pink on mobile */
+        z-index: 999;
+        padding: 30px 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-item {
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .nav-link {
+        font-size: 22px;    /* Larger text on mobile */
+    }
+}
+/*  Animations & Effects */
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar hover */
+.nav-item:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+/* Card hover effect */
+.card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
 
